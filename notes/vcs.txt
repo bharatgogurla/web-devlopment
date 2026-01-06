@@ -1,0 +1,158 @@
+Why to use?
+Git
+Version Control System
+Track Code History
+Undo / Rollback Changes
+Branching & Merging
+Github
+Online Code Hosting
+Cloud Backup for Git Repos
+Team Collaboration
+Pull Requests & Code Review
+Issue & Bug Tracking
+Open-Source Contributions
+Project Showcase for Jobs
+
+Repository: A repository is your project folder + Git tracking system.
+
+Branch: A branch in GitHub is an independent line of development that allows changes without affecting the main codebase. ->add features, fix bugs, experiment
+
+Fork: A fork is a personal copy of someone else’s repository on GitHub that lets you make changes independently without affecting the original project.
+
+CMD commands
+dir
+dir /a
+cd
+cd foldername
+cd ..
+cd \
+mkdir foldername/md foldername
+rmdir foldername
+del filename
+type filename	
+copy source dest	
+move source dest	
+rename old new	
+attrib	
+attrib +h file	
+attrib -h file
+cls
+echo. > file.txt
+
+GIT & GITHUB COMMANDS – CHEAT SHEET 
+
+# GIT SETUP 
+git --version                         → check git version
+git config --global user.name "Name"  → set username
+git config --global user.email "mail" → set email
+git config --list                     → view config
+
+# REPOSITORY 
+git init                              → initialize repo
+git clone <url>                       → clone remote repo
+
+# STATUS & HISTORY 
+git status                            → current repo state
+git log                               → full commit history
+git log --oneline                     → short history
+git log --graph --all                 → visual history
+git show <commit-id>                  → show commit details
+
+# ADD & COMMIT 
+git add <file>                        → stage file
+git add .                             → stage all files
+git commit -m "message"               → commit changes
+git commit --amend                    → modify last commit
+
+# DIFFERENCES 
+git diff                              → unstaged changes
+git diff --staged                     → staged changes
+
+# IGNORE FILES 
+.gitignore                            → files git should ignore
+
+# UNDO CHANGES 
+git restore <file>                    → discard local changes
+git restore --staged <file>           → unstage file
+git checkout -- <file>                → old undo method
+
+git reset --soft HEAD~1               → undo commit (keep staged)
+git reset --mixed HEAD~1              → undo commit (unstaged)
+git reset --hard HEAD~1               → delete commit & changes
+
+git revert <commit-id>                → safe undo (new commit)
+
+# BRANCHING 
+git branch                            → list branches
+git branch <name>                     → create branch
+git branch -d <name>                  → delete branch
+git checkout <branch>                 → switch branch
+git checkout -b <branch>              → create + switch
+git switch <branch>                   → modern switch
+git switch -c <branch>                → create + switch
+
+# MERGING & REBASING
+git merge <branch>                    → merge branch
+git rebase <branch>                   → rebase commits
+git merge --abort                     → cancel merge
+git rebase --abort                    → cancel rebase
+
+# STASH
+git stash                             → save work temporarily
+git stash list                        → list stashes
+git stash apply                       → apply stash
+git stash pop                         → apply & remove stash
+git stash drop                        → delete stash
+
+# REMOTE REPOSITORY 
+git remote -v                         → view remotes
+git remote add origin <url>           → add remote
+git remote remove origin              → remove remote
+
+# PUSH / PULL 
+git push origin main                  → push changes
+git push origin main -f                force push   if you want to delete a commit 
+git push -u origin main               → push + set upstream
+git pull origin main                  → fetch + merge
+git fetch origin                      → fetch only
+
+# FORK WORKFLOW 
+git clone url
+git remote add upstream <url>         → add original repo
+git branch <branch name>
+git checkout <branch name>
+changes
+git add .
+git commit -m ""
+git push origin <branch name>
+
+git fetch --all --prune
+git reset --hard upstream/main
+git pull upstream main
+
+git fetch upstream                    → fetch upstream changes
+git merge upstream/main               → sync fork
+
+# ADVANCED 
+git cherry-pick <commit-id>           → apply specific commit
+git reflog                            → recover lost commits
+git blame <file>                      → who changed what
+git tag                               → list tags
+git tag v1.0                          → create tag
+git tag -a v1.0 -m "msg"              → annotated tag
+
+# SSH (GITHUB AUTH) 
+ssh-keygen -t ed25519                 → generate ssh key
+ssh -T git@github.com                 → test connection
+
+# IMPORTANT CONCEPTS
+Working Directory → Staging Area → Repository
+Working Directory: The place on your local system where you create, edit, and delete files.
+Staging Area: The intermediate area where you select and prepare specific changes to be included in the next commit.
+Repository: The Git database that permanently stores committed snapshots and project history. 
+
+one branch = one pull request
+HEAD → current commit
+origin → default remote
+main → default branch
+
