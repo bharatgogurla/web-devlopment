@@ -1,0 +1,64 @@
+Web-Development Notes
+
+Network: A network is a collection of interconnected devices that can communicate with each other (local or wide).
+Types: Wired, Wireless, LAN, MAN, WAN
+
+Internet: The Internet is a global network of networks that connects computers worldwide to exchange data.
+
+Browser: A software application that lets users access and view websites.
+
+Browser Engine: The core component of a browser that interprets HTML, CSS, and JavaScript to render web pages.
+
+Web communication flow:
+Browser → DNS (domain to IP) → TCP → HTTP/HTTPS → Internet routing → Server → Response → Render
+URL → protocol → DNS → IP → port → TCP → HTTP → server → browser
+
+Internet routing flow:
+Your device → Router → ISP → Internet backbone (routers & fiber cables) → Destination server → Response back the same way
+
+IP address: Uniquely identifies a device on a network so it can send and request services on the Internet.
+
+MAC address: Uniquely identifies a physical device within a local network so data can be delivered to the correct device.
+
+HTTP/HTTPS: Protocols used to send requests and receive responses between client and server.
+Common methods: GET, POST, PUT, DELETE
+
+Client: A device or software that requests data or services from a server.
+
+Server: A system that receives client requests and responds with data or services.
+Server: A program running in the background that listens on a port and responds to client requests.
+
+DNS: Translates domain names (example.com) into IP addresses.
+
+TCP: A transport protocol that ensures reliable, ordered, and error-checked delivery of data.
+
+UDP: A transport protocol that provides fast, connectionless delivery without guarantee.
+
+Port numbers: Identify specific services on a device.
+Examples: HTTP → 80, HTTPS → 443
+
+Hosting: The process of storing a website or web application on a server so it is accessible on the Internet.
+
+Frontend: The part of a web application that users see and interact with (HTML, CSS, JavaScript).
+
+Backend: The server-side part of a web application that handles logic, authentication, and data processing.
+
+Database: Stores and manages application data such as users, posts, and files.
+
+Website: Mostly static content used for information.
+
+Web application: Dynamic and interactive application that uses backend logic and databases.
+
+OSI Model – One-line per layer:
+Application: Provides network services directly to user applications (HTTP, FTP, SMTP).
+Presentation: Formats, encrypts, and compresses data (TLS/SSL).
+Session: Establishes, manages, and terminates communication sessions.
+Transport: Ensures end-to-end data delivery using (TCP or UDP.)
+Network: Handles IP addressing and routes data between networks.(IP, ICMP, ARP)
+Data Link: Transfers data within a local network using MAC addresses. (Ethernet, Wi-Fi)
+Physical: Transmits raw bits as electrical, optical, or radio signals.(USB Ethernet, cables, Fiber optics)
+
+IANA → Regional Internet Registries(APNIC) → ISPs / Cloud Providers → Users / Servers
+
+Browser (client) requests files → Live Server runs on our laptop (localhost + port) → Server sends HTML/CSS/JS → Browser interprets and renders the website.
+  
