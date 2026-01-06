@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-3</title>
+  </head>
+  <body>
+    <h1>Complex Form</h1>
+    <form>
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name:">Name</label>
+        <input type="text" name="name" id="name" /> <br /><br />
+
+        <label for="email">Email ID:</label>
+        <input type="text" name="email" id="email" /> <br /><br />
+
+        <label for="phone">Phone No:</label>
+        <input type="text" name="phone" id="phone" /> <br /><br />
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" /> <br /><br />
+
+        <label for="gender">Gender:</label>
+
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" />
+
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" /> <br /><br />
+
+        <label for="country">Country</label>
+        <select name="country" id="country">
+          <option value="india">India</option>
+          <option value="pakisthan">Pakisthan</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Address</legend>
+        <label for="street">Street</label>
+        <input type="text" name="street" id="street" /> <br /><br />
+
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" /> <br /><br />
+
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" /> <br /><br />
+
+        <label for="zipcode">Zip Code</label>
+        <input type="text" name="zipcode" id="zipcode" /> <br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Other Information</legend>
+
+        <label for="comments">Comments</label> <br />
+        <textarea name="comments" id="comments" cols="30" rows="20"></textarea>
+        <br />
+
+        <label for="agree">I agree to terms and condition</label>
+        <input type="checkbox" name="agree" id="agree" />
+      </fieldset>
+      <br />
+
+      <button>submit</button>
+    </form>
+  </body>
+</html>
