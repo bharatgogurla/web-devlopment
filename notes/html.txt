@@ -1,0 +1,220 @@
+HTML:HyperText Markup Language used to create web pages what content to show and how it is structured.
+
+<!DOCTYPE html> → Declares the document type as HTML5 and ensures proper browser rendering.
+<html lang="en"> → Root element of the HTML page and defines the language of the content.
+<head> → Contains metadata and information about the webpage (not visible to users).
+<meta charset="UTF-8"> → Defines character encoding to correctly display all languages and symbols.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> → Makes the webpage responsive on different screen sizes.
+<title> → Sets the title of the webpage shown in the browser tab and search results. </title>
+</head>
+<body> → Contains all the visible content displayed on the webpage.
+</body>
+</html>
+
+
+
+Tag: A tag is a keyword written inside angle brackets < > that tells the browser what type of content it is (semantic) and how it should be structured.
+
+HTML TAG CLASSIFICATION (COMPLETE NOTES)
+
+1. Document / Root Tags
+<!DOCTYPE html>  → Declares HTML5 document
+<html>           → Root element of HTML
+<head>           → Metadata container
+<body>           → Visible content container
+
+2. Metadata Tags (inside <head>)
+<title>          → Page title (browser tab)
+<meta>           → Metadata (charset, viewport, SEO)
+<link>           → External resources (CSS, icons)
+<style>          → Internal CSS
+
+3. Sectioning / Semantic Layout Tags
+<header>         → Header of page or section
+<nav>            → Navigation links
+<main>           → Main content (only one per page)
+<section>        → Thematic grouping of content
+<article>        → Independent content unit
+<aside>          → Sidebar / related content
+<footer>         → Footer of page or section
+
+4. Heading Tags
+<h1> <h2> <h3> <h4> <h5> <h6> → Headings (hierarchy)
+after <h6> tag <h7> <h8> behave like <p> tag
+can use multiple <h1> per section
+
+5. Text Content Tags
+<p>              → Paragraph
+<br>             → Line break
+<hr>             → Horizontal rule
+<pre>            → Preformatted text
+
+6. Inline Semantic Text Tags
+<strong>         → Strong importance
+<em>             → Emphasis
+<sub>            → Subscript
+<sup>            → Superscript
+
+7. Grouping / Non-Semantic Tags
+<div>            → <div> is a generic block-level container used to group elements for layout and styling without adding meaning.
+<span>           → <span> is a generic inline HTML container used to group or style small parts of text without breaking the line.
+
+8. List Tags
+<ul>             → Unordered list
+order doesn't matters, default marker can be changed -> disc,circle,square
+<ol>             → Ordered list
+order matters, default marker can be changed -> 1, A, a, I, i
+<li>             → List item
+
+9. Link & Navigation Tags
+<a>              → Hyperlink
+<nav>            → Navigation section
+
+10. Media Tags
+<img>            → Image
+<audio>          → Audio
+<video>          → Video
+<source>         → Media source it is used for fallback not all browser support the source you have given
+<track>          → Subtitles / captions
+<iframe>  → Embeds another webpage or media inside the page
+
+11. Figure & Caption Tags
+<figure>         → Self-contained media/content
+<figcaption>     → Caption for figure
+
+12. Embedded Content Tags
+<iframe>         → Embed another webpage
+<embed>          → Embed external resource
+<object>         → Embedded object
+<param>          → Object parameter
+
+13. Scripting & Interactive Tags
+<script>         → JavaScript
+<noscript>       → Fallback if JS disabled
+<svg>            → Vector graphics
+
+
+
+Table Tags
+Arrange data into a structured format of rows and columns on a web page
+<table>          → Table container
+<caption>        → Table title
+<thead>          → Table header
+<th>             → Header cell
+<tbody>          → Table body
+<tr>             → Table row
+<td>             → Data cell
+<tfoot>          → Table footer
+<colgroup>       → Column group
+<col>            → Column
+
+
+
+Form Tags
+name=key value=value
+Collect data from users and send it to a server.
+<form>           → Form container
+Form Attributes
+action, method, enctype, target, autocomplete, novalidate, accept-charset, name, id
+
+<input>          → Input field
+Input Types
+text, password, email, number, tel, url, search, date, time, datetime-local, month, week, radio, checkbox, file, hidden, submit, reset, button, range, color, image
+
+Input Attributes
+name, id, value, placeholder, required, readonly, disabled, autofocus, checked, selected, multiple, size
+
+Validation Attributes
+required, min, max, step, pattern, minlength, maxlength
+
+<textarea>       → Multi-line input
+<select>         → Dropdown it contain multiple size select
+<option>         → Dropdown option
+
+<label>          → Input label
+for <-> id relation
+
+<button>         → Button can contain (Text HTML Icons Images)
+Button Types
+submit, reset, button
+
+<fieldset>       → Group inputs
+<legend>         → Fieldset title
+
+
+
+EMMET – MOST IMPORTANT SHORTCUTS
+
+!                       → HTML boilerplate
+
+Tags
+div                     → <div></div>
+p                       → <p></p>
+h1                      → <h1></h1>
+section                 → <section></section>
+article                 → <article></article>
+nav                     → <nav></nav>
+
+div.container            → class
+div#main                 → id
+
+div>p                    → child (nesting)
+h1+p                     → sibling
+
+li*3                     → multiply elements
+
+p{Hello World}           → text content
+
+a[href="https://site"]   → attributes
+img[src="img.png" alt="image"]
+
+ul>li*5                  → unordered list
+ol>li{Item $}*3          → ordered list with numbering
+
+li.item$*3               → auto numbering
+
+(div>h1+p)+(section>p)   → GROUPING ( )
+
+
+
+Element: An element is the complete structure
+opening tag + content + closing tag
+ex: <p>Hello World</p>
+
+
+
+SEO and Meta tags
+rel: relationship between the current HTML document and the linked external resource. Without rel, the <link> tag has no meaning.
+
+Common rel values:
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" href="font.woff2" as="font">
+
+Type: type specifies the MIME type (media type) of the linked resource.
+
+Common type values:
+CSS: text/css
+Icons: image/png, image/x-icon
+Fonts: font/woff, font/woff2
+XML/RSS: application/xml, application/rss+xml
+
+Meta tags
+metadata (information about the webpage)—such as character set, description, keywords, and viewport—to browsers and search engines, and are placed inside the <head> section.
+
+Types:
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+charset="UTF-8"
+character encoding used by the HTML document tells the browser how to interpret and display characters (letters, numbers, symbols, and emojis) correctly.
+UTF → Unicode Transformation Format
+8 → Uses 8-bit units (bytes)
+English letters (A–Z, a–z)
+Numbers (0–9)
+Special symbols (@, #, ₹, €)
+Emojis (😊)
+Non-English languages (Hindi, Arabic, Chinese, etc.)
