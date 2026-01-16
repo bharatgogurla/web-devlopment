@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media queries & Custom variables</title>
+    <style>
+      * {
+        margin: 2px;
+        padding: 0px;
+      }
+      .box {
+        height: 400px;
+        width: 400px;
+        background-color: aqua;
+        border: 3px solid black;
+      }
+      @media (min-width: 0px) and (max-width: 415px) {
+        .box {
+          background-color: blueviolet;
+        }
+      }
+      .container {
+        background-color: beige;
+        border: 5px solid black;
+        margin: 2px;
+        padding: 2px;
+        display: flex;
+      }
+      .item {
+        height: 200px;
+        width: 200px;
+        border: 2px solid brown;
+        margin: 2px;
+        padding: 2px;
+      }
+      #item1 {
+        background-color: aqua;
+      }
+      #item2 {
+        background-color: blue;
+      }
+      #item3 {
+        background-color: orange;
+      }
+      #item4 {
+        background-color: greenyellow;
+      }
+      @media (min-width: 415px) {
+        .container {
+          flex-direction: row;
+        }
+      }
+      @media (max-width: 415px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+      .section {
+        background-color: black;
+        border: 2px solid white;
+        margin: 2px;
+        display: flex;
+      }
+      .sub-section {
+        height: 650px;
+        width: 50%;
+        background-color: white;
+        border: 5px solid greenyellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sub-element {
+        height: 320px;
+        width: 100%;
+        margin: 5px;
+        border: 2px solid blueviolet;
+        overflow: auto;
+      }
+      .element {
+        height: 650px;
+        width: 50%;
+        margin-left: 10px;
+        background-color: white;
+        border: 5px solid greenyellow;
+      }
+      img {
+        height: 650px;
+        width: 100%;
+      }
+      @media (max-width: 869px) {
+        .section {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Hello sup!</div>
+    <div class="container">
+      <div class="item" id="item1">item1</div>
+      <div class="item" id="item2">item2</div>
+      <div class="item" id="item3">item3</div>
+      <div class="item" id="item4">item4</div>
+    </div>
+    <div class="section">
+      <div class="sub-section">
+        <div class="sub-element">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+            ratione fugiat, cupiditate eius reprehenderit similique ab culpa
+            sapiente adipisci eum provident error repellat repellendus totam
+            corrupti eveniet perspiciatis expedita, quas voluptates ullam? Ullam
+            cum dignissimos earum quidem voluptatibus facere sunt est ratione
+            amet similique suscipit quaerat minima impedit inventore maiores,
+            unde explicabo omnis placeat laudantium atque vel incidunt labore!
+            Autem id perspiciatis exercitationem pariatur delectus, officiis,
+            quia quidem qui molestiae, ut modi libero eum enim. Libero, sint id
+            nulla ipsa eligendi, nam ipsum nobis, aliquid quaerat dolore quas
+            voluptatum eos! Omnis iure aperiam, aut fugiat sed esse deserunt
+            ipsa, error at quas id consectetur. Illo est placeat, ipsa soluta
+            laborum in neque eos facere maiores tenetur delectus tempore ipsum,
+            nobis non. Aliquam aperiam ab officia, neque culpa libero eos a
+            distinctio aut ipsum expedita, quod repudiandae ea autem tempore,
+            beatae natus sunt ipsam at alias consequatur. Explicabo consequatur
+            nulla ipsum!
+          </p>
+        </div>
+        <div class="sub-element">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui
+            debitis rerum, nemo nam, sequi dolore exercitationem explicabo
+            reprehenderit doloribus facere. Laboriosam autem earum, corporis
+            eligendi optio eaque cum veritatis sequi illo eveniet labore rerum
+            error eos modi expedita reiciendis repellendus itaque quibusdam
+            soluta esse. Iste, cumque harum esse eos rerum rem hic recusandae
+            quod suscipit sed exercitationem libero inventore eius ipsum
+            perspiciatis officia provident voluptates quisquam? Doloremque
+            maxime voluptatibus minima voluptate corporis praesentium, hic
+            aliquam consequatur recusandae! Possimus eos molestiae repudiandae
+            quibusdam exercitationem nulla minima velit necessitatibus
+            voluptatibus nesciunt nihil mollitia, reiciendis dignissimos vitae
+            eveniet, ipsum excepturi error consequuntur sint quaerat, sequi
+            atque explicabo dolorum? Praesentium eligendi corrupti facere optio,
+            pariatur ducimus omnis exercitationem esse molestias minus nam
+            quaerat expedita, molestiae numquam magnam veritatis. Quas placeat
+            nihil, odio aliquid numquam eos debitis ea accusamus libero illum
+            ipsam at doloremque! Asperiores exercitationem consectetur
+            repellendus corporis voluptatem corrupti aperiam aut ab.
+          </p>
+        </div>
+      </div>
+      <div class="element">
+        <img src="nature.avif" alt="nature" />
+      </div>
+    </div>
+  </body>
+</html>
