@@ -1,0 +1,637 @@
+#CSS Specificity
+CSS Specificity: the rule CSS uses to decide which style wins when multiple CSS rules target the same element.
+!important
+Inline styles
+ID selectors
+Class / Attribute / Pseudo-class selectors
+Element / Pseudo-element selectors
+CASCADE rule: The rule written LAST in the CSS file wins.
+
+CSS Selector: is a pattern used to select HTML elements so that CSS styles can be applied to them.
+
+====== CSS SELECTORS CHEAT SHEET ======
+
+1) BASIC (SIMPLE) SELECTORS
+------------------------------------------------
+*            → Universal selector (all elements)
+p            → Element / Type selector
+.box         → Class selector
+#main        → ID selector
+h1, p, div   → Group selector
+
+2) COMBINATOR SELECTORS (RELATIONSHIP)
+------------------------------------------------
+div p        → Descendant (p inside div)
+div > p      → Child (direct p child of div)
+h1 + p       → Adjacent sibling (first p after h1)
+h1 ~ p       → General sibling (all p after h1)
+
+3) ATTRIBUTE SELECTORS
+------------------------------------------------
+[attr]               → Has attribute
+[type="text"]        → Exact match
+[class~="box"]       → Contains word (space-separated)
+[class^="btn"]       → Starts with
+[class$="btn"]       → Ends with
+[class*="btn"]       → Contains substring
+[lang|="en"]         → en or en-*
+
+4) PSEUDO-CLASSES (STATE / CONDITION)
+------------------------------------------------
+User interaction:
+:hover
+:active
+:focus
+:visited
+:link
+
+Structural:
+:first-child
+:last-child
+:nth-child(n)
+:nth-last-child(n)
+:only-child
+:first-of-type
+:last-of-type
+:nth-of-type(n)
+:only-of-type
+
+Forms:
+:checked
+:disabled
+:enabled
+:required
+:optional
+:valid
+:invalid
+
+Other:
+:not(selector)
+:empty
+:root
+
+5) PSEUDO-ELEMENTS (PART OF ELEMENT)
+------------------------------------------------
+::before
+::after
+::first-letter
+::first-line
+::selection
+::placeholder
+::marker
+
+6) MODERN / ADVANCED SELECTORS
+------------------------------------------------
+:is()
+:where()
+:has()
+:focus-visible
+:focus-within
+
+7) NAMESPACE SELECTOR (RARE)
+------------------------------------------------
+ns|element   → Used in XML / SVG
+
+
+
+#CSS declaration
+inline
+internal
+external
+
+
+
+#Fonts
+Font: controls how text looks — its style, size, thickness, spacing, and typeface.
+1. font-family
+2. font-size
+3. font-weight
+4. font-style
+5. line-height
+6. letter-spacing
+7. word-spacing
+Fallback font: backup font listed after the main font in font-family
+Google font: link import
+
+Color: used to style text, backgrounds, borders, shadows, and UI elements using different color formats.
+Formats:
+1. color names
+2. rgb (255,255,255,alpha->transparency) 0->black 255->white
+3. hex #ffffff06  0->black f->white
+4. hsl ->Hue, Saturation, and Lightness 0 or 360->red 120->green 240->blue
+
+
+
+##CSS layout
+#Box Model
+4 parts of the box model
++-----------------------+
+|       margin          |
+|  +-----------------+ |
+|  |     border      | |
+|  |  +-----------+ | |
+|  |  | padding   | | |
+|  |  | +-------+ | | |
+|  |  | |content| | | |
+|  |  | +-------+ | | |
+|  |  +-----------+ | |
+|  +-----------------+ |
++-----------------------+
+
+box-sizing: border-box - makes an element’s width and height include its padding and border, so the final size stays exactly as defined.
+
+Margin-Collapse: Vertical margins (top/bottom) of block elements combine into one.
+Only the largest margin is applied.
+
+HOW TO PREVENT COLLAPSE
+• Add padding to parent
+• Add border to parent
+• Use overflow: hidden
+• Use flexbox/grid
+• Use gap instead of margin
+
+
+
+#CSS Display Property
+-display: block 
+Default for: div, p, h1–h6, section
+Takes full width
+Starts on a new line
+Width & height work
+Margin and padding work
+
+-display: inline
+Default for: span, a, strong
+Stays in the same line
+Width & height don’t work
+Padding works 
+margin only horizontally
+
+-display: inline-block
+Stays inline
+Width & height work
+Margin and padding work
+
+note: you can explicitly set display type
+
+
+
+#CSS position Property
+-position: static
+by Default
+Cannot use top, right, bottom, left
+
+-position: relative
+Element moves relative to itself (current window)
+still occupies its original space
+
+-position: absolute
+Element is removed from normal flow
+positioned relative to nearest positioned ancestor
+If none found → positions relative to viewport (page).
+
+-position: fixed
+Element is removed from normal flow
+positioned relative to the viewport (browser window)
+Never moves when you scroll
+
+-position: sticky
+Acts normal (relative) at first
+Becomes fixed after a scroll threshold
+Stays inside its parent container
+need an offset value
+top | left | right | bottom
+
+-object-fit
+Controls HOW the media fits inside its container.
+VALUES:
+• fill        → Default, stretches image (distorts)
+• contain     → Shows full image, keeps ratio, empty space
+• cover       → Fills container, keeps ratio, crops image (MOST USED)
+• none        → Original size, no scaling
+• scale-down  → Smaller of none or contain
+
+-object-position
+Controls WHICH PART of the media is visible.
+VALUES:
+• center (default)
+• top | bottom | left | right
+
+
+
+#CSS float, clear, overflow
+Right,left
+-float
+Moves an element to the left or right
+Allows text and inline content to wrap around it
+
+-clear
+Stops an element from sitting next to a floated element.
+Pushes the element below floats.
+
+-overflow
+Controls what happens when content exceeds container size.
+overflow: visible;
+overflow: hidden;
+overflow: scroll;
+overflow: auto;
+
+
+
+#flexbox
+flexbox: Flexbox (Flexible Box Layout) is a 1-dimensional layout system used to align and distribute space along a row OR a column
+Flexbox has two roles:
+Flex Container (Parent)
+Flex Items (Children)
+
+Main Axis: Primary direction (row by default)
+Cross Axis: Perpendicular direction
+
+#Flex container properties!
+-Display
+display: flex;
+
+-flex direction
+.container {
+  flex-direction: row; /* default */
+}
+Values:
+row            
+row-reverse
+column        
+column-reverse
+
+-flex wrap
+flex-wrap: controls whether flex items stay on one line or move to the next line when there isn’t enough space.
+.container {
+  flex-wrap: wrap;
+}
+Values:
+nowrap   /* default */
+wrap
+wrap-reverse
+
+flex-flow: is a shorthand property that combines two Flexbox container properties
+
+-justify content
+justify-content: controls how flex items are aligned and spaced along the main axis inside a flex container.
+.container {
+  justify-content: center;
+}
+Values:
+start
+center
+end
+space-between: equal space between them, no space at the start or end.
+space-around: equal space around each item; edge space is half
+space-evenly: exactly equal space everywhere — between items and at the edges.
+
+-align Items
+align-items: controls how flex items are aligned along the cross axis inside a flex container.
+.container {
+  align-items: center;
+}
+Values:
+stretch  /* default */
+center
+start
+end
+baseline
+
+-align-content
+Works only when wrap is enabled
+align-content: controls how multiple rows or columns of wrapped flex items are spaced along the cross-axis.
+
+#Flex items properties!
+-align-self
+align-self: allows a single flex item to override the container’s align-items value and align itself on the cross axis.
+Values:
+stretch  /* default */
+center
+start
+end
+baseline
+
+-order
+order: controls the visual order of flex items inside a flex container without changing the HTML structure
+
+-flex-grow
+flex-grow: 1;
+
+-flex-shrink
+flex-shrink: 0;
+
+-shorthand property
+flex: grow shrink basis;
+
+flex-basis: defines the initial size of a flex item along the main axis before free space is distributed.
+
+
+
+#CSS grid
+-css grid: is a 2-dimensional layout system that allows you to design layouts using rows and columns together.
+
+-Grid Terminology
+Grid Container: The parent element where you apply
+Grid Items: Direct children of the grid container.
+Grid Lines: lines that divide rows and columns.
+Grid Tracks: space between two grid lines
+Grid Cell: A single box formed by 1 row + 1 column.
+Grid Area: group of cells forming a rectangle.
+
+-Grid Container properties
+display: grid: Container behaves like a block element
+display: inline-grid: Behaves like inline-block
+grid-template-columns: Defines how many columns and their size
+grid-template-rows: Defines how many rows and their size
+fr Unit: otal space divided by fr unit
+repeat() function: mention number of rows and column and their size repeat(4, 1fr);
+Gaps: row-gap: 10px; column-gap: 30px;
+
+-Grid Item properties
+grid-column-start: defines the starting vertical grid line from which a grid item begins.
+grid-column-end: defines the ending vertical grid line where a grid item stops.
+grid-row-start: defines the starting horizontal grid line from which a grid item begins.
+grid-row-end: defines the ending horizontal grid line where a grid item stops.
+
+-Grid Alignment & spacing
+
+• *-items / *-self  → align items INSIDE grid cells
+• *-content         → align the WHOLE grid (tracks)
+
+ALIGN ALL GRID ITEMS (inside their cells)
+
+justify-items:
+  start | center | end | stretch (default)
+
+align-items:
+  start | center | end | stretch (default)
+
+place-items (shorthand):
+  place-items: <align-items> <justify-items>
+
+Example:
+  place-items: center;
+
+ALIGN WHOLE GRID (tracks inside container)
+(Works only if grid is smaller than container)
+
+justify-content:
+  start | center | end | space-between | space-around | space-evenly
+
+align-content:
+  start | center | end | space-between | space-around | space-evenly
+
+place-content (shorthand):
+  place-content: <align-content> <justify-content>
+
+Example:
+  place-content: center;
+
+ALIGN A SINGLE GRID ITEM
+
+justify-self:
+  start | center | end | stretch
+
+align-self:
+  start | center | end | stretch
+
+place-self (shorthand):
+  place-self: <align-self> <justify-self>
+
+Example:
+  place-self: center;
+
+-Responsive Grid properties
+minmax(): minmax(min, max): sets a minimum and maximum size for a grid track
+Helps create flexible and responsive layouts.
+grid-template-columns: minmax(200px, 1fr);
+
+auto-fit: automatically fits as many columns as possible inside the container
+Unused columns collapse and extra space is distributed.
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+grid-template-areas: Used to define layout using named areas instead of grid lines
+Makes layouts more readable and semantic.
+steps:
+Step 1: Create the HTML structure
+Step 2: Make the container a grid
+Step 3: Define rows and columns
+Step 4: Define the layout using grid-template-areas
+grid-template-areas:
+    "header header header"
+    "sidebar content-1 content-1"
+    "sidebar content-2 content-3"
+    "footer footer footer";
+}
+Step 5: Assign areas to grid items
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+
+
+
+
+#CSS units
+Relative units
+% – Relative to parent
+
+vw,vh - Relative to viewport
+1% of viewport width
+1% of viewport height
+vmin,vmax- Relative to the screen
+1% of the smaller viewport side 
+1% of the larger viewport side
+
+em – Relative to parent font-size
+parent font-size * em value
+problem compounding
+
+rem - Relative to root (html)
+default root (html) font size - 16px
+default root (html) font size * rem value
+fixed size
+
+Absolute units
+px
+1/96th of an inch
+
+
+
+#CSS media queries
+Media queries let CSS change styles based on screen size, device, or conditions.
+
+-syntax
+@media media-type and (condition) {
+  /* CSS rules */
+}
+@media (condition) {
+  /* CSS rules */
+}
+@media (condition) and (condition) {
+  /* CSS rules */
+}
+max-width: Applies below or equal to value
+min-width: Applies above or equal to value
+
+-example
+@media (min-width: 415px) {
+        .container {
+          flex-direction: row;
+        }
+      }
+
+
+#CSS shadows
+-box-shadow — Element Shadows
+box-shadow: offset-x offset-y blur-radius spread-radius color inset;
+
+-text-shadow — Text Shadows
+text-shadow: offset-x offset-y blur-radius color;
+
+Values:
+offset-x      → +right | -left
+offset-y      → +down  | -up
+blur-radius   → softness (optional)
+spread-radius → size (box-shadow only)
+color         → shadow color
+inset         → inner shadow (box-shadow only)
+
+
+
+#CSS animation
+CSS animation is a way to change an element’s style smoothly over time using @keyframes without JavaScript.
+-properties
+animation: A shorthand property for setting all the animation properties
+
+animation-name: 	Specifies the name of the @keyframes animation
+@keyframes: Specifies the animation code
+
+animation-delay: Specifies a delay for the start of an animation
+values:
+time
+
+animation-duration: Specifies how long time an animation should take to complete one cycle
+values:
+time
+
+animation-iteration-count: Specifies the number of times an animation should be played
+values:
+0 to infinity
+
+animation-timing-function: Specifies the speed curve of the animation 
+values:
+ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)
+linear - Specifies an animation with the same speed from start to end
+ease-in - Specifies an animation with a slow start
+ease-out - Specifies an animation with a slow end
+ease-in-out - Specifies an animation with a slow start and end
+cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function
+
+animation-direction: Specifies whether an animation should be played forwards, backwards or in alternate cycles
+values:
+normal - The animation is played as normal (forwards). This is default
+reverse - The animation is played in reverse direction (backwards)
+alternate - The animation is played forwards first, then backwards
+alternate-reverse - The animation is played backwards first, then forwards
+
+animation-fill-mode: Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both)
+values:
+none - Default value. Animation will not apply any styles to the element before or after it is executing
+forwards - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+backwards - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+
+animation-play-state: 	Specifies whether the animation is running or paused
+values:
+running - Default value. The animation is playing
+paused  - The animation is paused
+
+-shorthand
+animation: name duration timing-function delay iteration-count direction fill-mode;
+
+
+
+#CSS transition
+transition controls how smoothly that change happens
+-properties
+transition: A shorthand property for setting the four transition properties into a single property
+
+transition-property: Specifies the name of the CSS property the transition effect is for
+
+transition-delay: Specifies a delay (in seconds) for the transition effect
+
+transition-duration: Specifies how many seconds or milliseconds a transition effect takes to complete
+
+transition-timing-function: Specifies the speed curve of the transition effect
+values:
+ease - transition will start slow, then go fast, and end slow (this is default)
+linear - transition will keep the same speed from start to end
+ease-in - transition will start slow
+ease-out - transition will end slow
+ease-in-out - transition will have a slow start and end
+cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+
+-shorthand
+transition: property duration timing-function delay;
+
+
+
+#CSS Transform 
+transform changes how an element looks or moves
+#CSS 2D Transform
+matrix(): Defines a 2D transformation, using a matrix of six values
+-syntax
+transform: matrix(a, b, c, d, e, f);
+| a  c  e |
+| b  d  f |
+| 0  0  1 |
+a	scaleX
+b	skewY
+c	skewX
+d	scaleY
+e	translateX (px)
+f	translateY (px)
+
+translate(): Defines a 2D translation, moving the element along the X- and the Y-axis
+translateX(): Defines a 2D translation, moving the element along the X-axis
+translateY(): Defines a 2D translation, moving the element along the Y-axis
+scale(): Defines a 2D scale transformation, scaling the elements width and height
+scaleX(): Defines a 2D scale transformation, scaling the element's width
+scaleY(): Defines a 2D scale transformation, scaling the element's height
+rotate(): Defines a 2D rotation, the angle is specified in the parameter
+skew(): Defines a 2D skew transformation along the X- and the Y-axis
+skewX(): Defines a 2D skew transformation along the X-axis
+skewY(): Defines a 2D skew transformation along the Y-axis
+
+
+
+#CSS 3D Transform
+# CSS 3D Transform
+matrix3d(): Defines a 3D transformation using a 4×4 matrix of 16 values
+-syntax
+transform: matrix3d(
+  m11, m12, m13, m14,
+   m31, m32, m33, m34,
+  m41, m42, m43, m44
+);
+
+| m11  m12  m13  m14 |
+| m21  m22  m23  m24 |
+| m31  m32  m33  m34 |
+| m41  m42  m43  m44 |
+
+translate3d(): Defines a 3D translation along X, Y, and Z axes
+translateX(): Moves element along X-axis
+translateY(): Moves element along Y-axis
+translateZ(): Moves element along Z-axis (depth)
+scale3d(): Defines a 3D scale transformation
+scaleX(): Scales element along X-axis
+scaleY(): Scales element along Y-axis
+scaleZ(): Scales element along Z-axis
+rotate3d(): Defines a 3D rotation around a vector
+rotateX(): Rotates element around X-axis
+rotateY(): Rotates element around Y-axis
+rotateZ(): Rotates element around Z-axis
+perspective(): Defines how far the object is from the viewer
