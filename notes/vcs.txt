@@ -156,3 +156,27 @@ HEAD → current commit
 origin → default remote
 main → default branch
 
+#COMMIT TYPES
+
+┌─────────────────────────────────────────────────────────┐
+│                 CONVENTIONAL COMMIT TYPES               │
+├────────────┬────────────────────────────────────────────┤
+│ feat       │ Add a new feature                           │
+│ fix        │ Fix a bug                                   │
+│ docs       │ Documentation-only changes                  │
+│ style      │ Formatting (no code logic change)           │
+│ refactor   │ Code change (no bug fix, no feature)        │
+│ perf       │ Improve performance                         │
+│ test       │ Add or update tests                         │
+│ build      │ Build system or dependency changes          │
+│ ci         │ CI/CD configuration changes                 │
+│ chore      │ Maintenance tasks (non-prod code)           │
+│ revert     │ Revert a previous commit                    │
+└────────────┴────────────────────────────────────────────┘
+
+<type>(optional-scope): short description
+
+feat(auth): add JWT login
+fix(ui): resolve navbar overflow
+docs: add README file
+chore: update dependencies
